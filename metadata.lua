@@ -5,7 +5,7 @@ PLUGIN = {}
 --- Plugin name
 PLUGIN.name = "cmake"
 --- Plugin version
-PLUGIN.version = "0.1.1"
+PLUGIN.version = "0.1.5"
 --- Plugin homepage
 PLUGIN.homepage = "https://github.com/version-fox/vfox-cmake"
 --- Plugin license, please choose a correct license according to your needs.
