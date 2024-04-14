@@ -38,7 +38,7 @@ end
 function util:getInfo()
     local result = {}
     local resp, err = http.get({
-        url = "https://fastly.jsdelivr.net/gh/ahai-code/vfox-cmake@main/assets/version.json"
+        url = "https://fastly.jsdelivr.net/gh/version-fox/vfox-cmake@main/assets/version.json"
     })
 
     if err ~= nil then
