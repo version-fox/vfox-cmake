@@ -49,16 +49,13 @@ function util:getInfo()
     end
 
     local respInfo = json.decode(resp.body)[RUNTIME.osType]
-
-    for _, info in pairs(respInfo) do
-        for _, obj in ipairs(info) do
-            if obj.arch=="" then
-                table.insert(result, {version = obj.version,note=""})
-                table.insert(utilSingleton.RELEASES,{version = obj.version,url=obj.download_url,sha256=obj.sha256})
-            elseif obj.arch == RUNTIME.archType then
-                table.insert(result, {version = obj.version,note=""})
-                table.insert(utilSingleton.RELEASES,{version = obj.version,url=obj.download_url,sha256=obj.sha256})
-            end
+    for _, obj in ipairs(respInfo) do
+        if obj.arch=="" then
+            table.insert(result, {version = obj.version,note=""})
+            table.insert(utilSingleton.RELEASES,{version = obj.version,url=obj.download_url,sha256=obj.sha256})
+        elseif obj.arch == RUNTIME.archType then
+            table.insert(result, {version = obj.version,note=""})
+            table.insert(utilSingleton.RELEASES,{version = obj.version,url=obj.download_url,sha256=obj.sha256})
         end
     end
     table.sort(result, function(a, b)
