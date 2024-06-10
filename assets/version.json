@@ -1796,6 +1796,12 @@
         },
         {
             "arch": "",
+            "version": "3.28.6",
+            "download_url": "https://cmake.org/files/v3.28/cmake-3.28.6-macos-universal.tar.gz",
+            "sha256": "e992f382a98839aefc9292142699af5d43952e3087509d7671aef0dbeb33e852"
+        },
+        {
+            "arch": "",
             "version": "3.29.0",
             "download_url": "https://cmake.org/files/v3.29/cmake-3.29.0-macos-universal.tar.gz",
             "sha256": "4adc9d97242e18b47a4c4fa4c7d09200e4b9550cba6116e4522a7525639f436a"
@@ -1841,6 +1847,24 @@
             "version": "3.29.3",
             "download_url": "https://cmake.org/files/v3.29/cmake-3.29.3-macos-universal.tar.gz",
             "sha256": "81db032983a33dbd8da0315df4488e19999ffb63c5a900fb1c0741b14a7b78ef"
+        },
+        {
+            "arch": "",
+            "version": "3.29.4",
+            "download_url": "https://cmake.org/files/v3.29/cmake-3.29.4-macos-universal.tar.gz",
+            "sha256": "dbc81424c6fb9842c07fe6ad8e196cd8dd96833c706951d34d36cc5f09c9f81a"
+        },
+        {
+            "arch": "",
+            "version": "3.29.5",
+            "download_url": "https://cmake.org/files/v3.29/cmake-3.29.5-macos-universal.tar.gz",
+            "sha256": "2efa78e6cd84a4f0276cfce83c1ad5629c9884287a673290f9f52b1c575bd3ec"
+        },
+        {
+            "arch": "",
+            "version": "3.30.0-rc1",
+            "download_url": "https://cmake.org/files/v3.30/cmake-3.30.0-rc1-macos-universal.tar.gz",
+            "sha256": "f927d88d54503b7dbbf31aae063e924806d51cec266293d2c2156fc2701292cd"
         }
     ],
     "windows": [
@@ -5434,6 +5458,24 @@
         },
         {
             "arch": "arm64",
+            "version": "3.28.6",
+            "download_url": "https://cmake.org/files/v3.28/cmake-3.28.6-windows-arm64.zip",
+            "sha256": "63e4ebd2dadb5ad63faaf4ed38db40d3fec92d1b050d2a4e69011ea3ee699d29"
+        },
+        {
+            "arch": "386",
+            "version": "3.28.6",
+            "download_url": "https://cmake.org/files/v3.28/cmake-3.28.6-windows-i386.zip",
+            "sha256": "29503bc5525592c95a51a0f58eea9a9e38650dbbe7bbeb1caab7fc8f4048d7c5"
+        },
+        {
+            "arch": "amd64",
+            "version": "3.28.6",
+            "download_url": "https://cmake.org/files/v3.28/cmake-3.28.6-windows-x86_64.zip",
+            "sha256": "a8f2e684ead94a64fd3517a38857a5b3f7f8d68d15c49ca1143d18797eaf9cac"
+        },
+        {
+            "arch": "arm64",
             "version": "3.29.0",
             "download_url": "https://cmake.org/files/v3.29/cmake-3.29.0-windows-arm64.zip",
             "sha256": "e5bea5c45b61f105429fc664364c5280acd40770cc74235b79e7422f608a9849"
@@ -5575,6 +5617,60 @@
             "version": "3.29.3",
             "download_url": "https://cmake.org/files/v3.29/cmake-3.29.3-windows-x86_64.zip",
             "sha256": "6423ed300e6aa1b15c4aeae9a7399157f53fc84a2fb7242ca64c8dfd83e5f8a6"
+        },
+        {
+            "arch": "arm64",
+            "version": "3.29.4",
+            "download_url": "https://cmake.org/files/v3.29/cmake-3.29.4-windows-arm64.zip",
+            "sha256": "16ce291dd34189a60d7add96b4148adfdbb46b6b2478086cb43abe2e5ff34ad3"
+        },
+        {
+            "arch": "386",
+            "version": "3.29.4",
+            "download_url": "https://cmake.org/files/v3.29/cmake-3.29.4-windows-i386.zip",
+            "sha256": "8773df8f82a8172cfd964cc052864592d45481a636cb8b533e3736102a97c2fa"
+        },
+        {
+            "arch": "amd64",
+            "version": "3.29.4",
+            "download_url": "https://cmake.org/files/v3.29/cmake-3.29.4-windows-x86_64.zip",
+            "sha256": "1c8bfbc5537553edccded62f8f03475a161280c1b64f54c887824c6eb4e773ff"
+        },
+        {
+            "arch": "arm64",
+            "version": "3.29.5",
+            "download_url": "https://cmake.org/files/v3.29/cmake-3.29.5-windows-arm64.zip",
+            "sha256": "9c67d16560125ebf1278ef1b3072914a60bff780522b28c0096f364f775a8e55"
+        },
+        {
+            "arch": "386",
+            "version": "3.29.5",
+            "download_url": "https://cmake.org/files/v3.29/cmake-3.29.5-windows-i386.zip",
+            "sha256": "7587b1aaab131ca6586cb241bbf1d29a4e5e322063788a8ea260cc7f492a46bd"
+        },
+        {
+            "arch": "amd64",
+            "version": "3.29.5",
+            "download_url": "https://cmake.org/files/v3.29/cmake-3.29.5-windows-x86_64.zip",
+            "sha256": "f85db8361cb7eb11ceb6b2f1ee42bec7234bb8d9e487ea78c00de64771768d92"
+        },
+        {
+            "arch": "arm64",
+            "version": "3.30.0-rc1",
+            "download_url": "https://cmake.org/files/v3.30/cmake-3.30.0-rc1-windows-arm64.zip",
+            "sha256": "0d7fcb6437863ce70ad6412da79ec35b8abd835b0935275512ce1feeed6b7cd3"
+        },
+        {
+            "arch": "386",
+            "version": "3.30.0-rc1",
+            "download_url": "https://cmake.org/files/v3.30/cmake-3.30.0-rc1-windows-i386.zip",
+            "sha256": "d8534be792bb9cd57ce4901a02a2b67b3b85163ee00aaa0042205cacdfc91a1d"
+        },
+        {
+            "arch": "amd64",
+            "version": "3.30.0-rc1",
+            "download_url": "https://cmake.org/files/v3.30/cmake-3.30.0-rc1-windows-x86_64.zip",
+            "sha256": "ca04d12160f4dbbcc2435011e6416ee118960883984c7bcd3edf1f5d27d23f56"
         }
     ],
     "linux": [
@@ -8250,6 +8346,18 @@
         },
         {
             "arch": "386",
+            "version": "3.28.6",
+            "download_url": "https://cmake.org/files/v3.28/cmake-3.28.6-linux-aarch64.tar.gz",
+            "sha256": "7909cc2128ce9442c63ce674a0bfb0e4f4ce04cef667d887e15ad5670d594ba7"
+        },
+        {
+            "arch": "amd64",
+            "version": "3.28.6",
+            "download_url": "https://cmake.org/files/v3.28/cmake-3.28.6-linux-x86_64.tar.gz",
+            "sha256": "931e3c0d546ee03ca72bb147ccd9b49e3b6252f765f66bf21b9d165519940458"
+        },
+        {
+            "arch": "386",
             "version": "3.29.0",
             "download_url": "https://cmake.org/files/v3.29/cmake-3.29.0-linux-aarch64.tar.gz",
             "sha256": "2cb768a14b28a4478bb931d917dbc419305b82433bdecc046df98e7c336225fa"
@@ -8343,6 +8451,42 @@
             "version": "3.29.3",
             "download_url": "https://cmake.org/files/v3.29/cmake-3.29.3-linux-x86_64.tar.gz",
             "sha256": "90b543a30220401db0e08347af067545be158ce89ffb09b7df1516cda8617329"
+        },
+        {
+            "arch": "386",
+            "version": "3.29.4",
+            "download_url": "https://cmake.org/files/v3.29/cmake-3.29.4-linux-aarch64.tar.gz",
+            "sha256": "9210619e7907b14858178743d5b7ba70ce846d98a6a65bcdbd83c08b932ba6a5"
+        },
+        {
+            "arch": "amd64",
+            "version": "3.29.4",
+            "download_url": "https://cmake.org/files/v3.29/cmake-3.29.4-linux-x86_64.tar.gz",
+            "sha256": "64e5473169dd43055fbf2c138cae6e5ec10f30a0606d24f12078e68466320cf4"
+        },
+        {
+            "arch": "386",
+            "version": "3.29.5",
+            "download_url": "https://cmake.org/files/v3.29/cmake-3.29.5-linux-aarch64.tar.gz",
+            "sha256": "6eb655ee89c50611f2370c5a3293bd2fe1920b73dff50b71fb3357d56a9d28d8"
+        },
+        {
+            "arch": "amd64",
+            "version": "3.29.5",
+            "download_url": "https://cmake.org/files/v3.29/cmake-3.29.5-linux-x86_64.tar.gz",
+            "sha256": "92629f95e15e7c2e88726c57a984ffdc5cf248e354f7ab791bc86d2ad513903e"
+        },
+        {
+            "arch": "386",
+            "version": "3.30.0-rc1",
+            "download_url": "https://cmake.org/files/v3.30/cmake-3.30.0-rc1-linux-aarch64.tar.gz",
+            "sha256": "fad0c4b4562b33922ddd394e1d229bbc3ea941b41ce9f058decda40ea0def0ea"
+        },
+        {
+            "arch": "amd64",
+            "version": "3.30.0-rc1",
+            "download_url": "https://cmake.org/files/v3.30/cmake-3.30.0-rc1-linux-x86_64.tar.gz",
+            "sha256": "fe625fb078cbfe53cdaa48417a1b87be7fca19de224836e9bf0c15f80696ddd8"
         }
     ]
 }
