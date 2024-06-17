@@ -1865,6 +1865,18 @@
             "version": "3.30.0-rc1",
             "download_url": "https://cmake.org/files/v3.30/cmake-3.30.0-rc1-macos-universal.tar.gz",
             "sha256": "f927d88d54503b7dbbf31aae063e924806d51cec266293d2c2156fc2701292cd"
+        },
+        {
+            "arch": "",
+            "version": "3.30.0-rc2",
+            "download_url": "https://cmake.org/files/v3.30/cmake-3.30.0-rc2-macos-universal.tar.gz",
+            "sha256": "bbc1a9190f5afa8b2f9d6ca029ba439823742ed782c819b6f5a751e2a0df29a2"
+        },
+        {
+            "arch": "",
+            "version": "3.30.0-rc3",
+            "download_url": "https://cmake.org/files/v3.30/cmake-3.30.0-rc3-macos-universal.tar.gz",
+            "sha256": "a39c3e21ad921a32c4b4d9b8dbd546c388b72e7b5ea624d908846dc6de3dc323"
         }
     ],
     "windows": [
@@ -5671,6 +5683,42 @@
             "version": "3.30.0-rc1",
             "download_url": "https://cmake.org/files/v3.30/cmake-3.30.0-rc1-windows-x86_64.zip",
             "sha256": "ca04d12160f4dbbcc2435011e6416ee118960883984c7bcd3edf1f5d27d23f56"
+        },
+        {
+            "arch": "arm64",
+            "version": "3.30.0-rc2",
+            "download_url": "https://cmake.org/files/v3.30/cmake-3.30.0-rc2-windows-arm64.zip",
+            "sha256": "316401993138a78dd1b139609a8595a814ee99231b7b78511d41cc17bcca7bbb"
+        },
+        {
+            "arch": "386",
+            "version": "3.30.0-rc2",
+            "download_url": "https://cmake.org/files/v3.30/cmake-3.30.0-rc2-windows-i386.zip",
+            "sha256": "d9c8bd932735a3093223abdc830c26b6630454ad7be2d670c6a2760460576387"
+        },
+        {
+            "arch": "amd64",
+            "version": "3.30.0-rc2",
+            "download_url": "https://cmake.org/files/v3.30/cmake-3.30.0-rc2-windows-x86_64.zip",
+            "sha256": "e217d9145ea9e96b3b8199ef02d6385e2e931f0300976fe07afa1073c1cf9453"
+        },
+        {
+            "arch": "arm64",
+            "version": "3.30.0-rc3",
+            "download_url": "https://cmake.org/files/v3.30/cmake-3.30.0-rc3-windows-arm64.zip",
+            "sha256": "9768be435bb5619c7539fe66f180f0056a59f29bdc28caa3e5a0fd1efe963a93"
+        },
+        {
+            "arch": "386",
+            "version": "3.30.0-rc3",
+            "download_url": "https://cmake.org/files/v3.30/cmake-3.30.0-rc3-windows-i386.zip",
+            "sha256": "af3ecddc97d1dfd9e363c3f561389c283268d334f9b6261234cc556d4fd517af"
+        },
+        {
+            "arch": "amd64",
+            "version": "3.30.0-rc3",
+            "download_url": "https://cmake.org/files/v3.30/cmake-3.30.0-rc3-windows-x86_64.zip",
+            "sha256": "ecae920994e96649a22c0df093718537354af08054c998c8f4b862040aebee87"
         }
     ],
     "linux": [
@@ -8487,6 +8535,30 @@
             "version": "3.30.0-rc1",
             "download_url": "https://cmake.org/files/v3.30/cmake-3.30.0-rc1-linux-x86_64.tar.gz",
             "sha256": "fe625fb078cbfe53cdaa48417a1b87be7fca19de224836e9bf0c15f80696ddd8"
+        },
+        {
+            "arch": "386",
+            "version": "3.30.0-rc2",
+            "download_url": "https://cmake.org/files/v3.30/cmake-3.30.0-rc2-linux-aarch64.tar.gz",
+            "sha256": "e5b52e4d939cc0fb1c606b85e4ecaa8a4148116439cb4db5fdd0365dfde0eb4f"
+        },
+        {
+            "arch": "amd64",
+            "version": "3.30.0-rc2",
+            "download_url": "https://cmake.org/files/v3.30/cmake-3.30.0-rc2-linux-x86_64.tar.gz",
+            "sha256": "75d8c5b6f2087acbffb86dc58726e98cdbacad4d98ce3fcd359f59298a4c7294"
+        },
+        {
+            "arch": "386",
+            "version": "3.30.0-rc3",
+            "download_url": "https://cmake.org/files/v3.30/cmake-3.30.0-rc3-linux-aarch64.tar.gz",
+            "sha256": "bfefefda491d91eeb61d9f199b75f0b0e227a1880919cb585cda78af0210909b"
+        },
+        {
+            "arch": "amd64",
+            "version": "3.30.0-rc3",
+            "download_url": "https://cmake.org/files/v3.30/cmake-3.30.0-rc3-linux-x86_64.tar.gz",
+            "sha256": "e5626890d969b26a60db6abfcbbfdc5fa06cc161d72e4f148fde631278e4c5e1"
         }
     ]
 }
