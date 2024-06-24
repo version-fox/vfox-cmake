@@ -1862,6 +1862,12 @@
         },
         {
             "arch": "",
+            "version": "3.29.6",
+            "download_url": "https://cmake.org/files/v3.29/cmake-3.29.6-macos-universal.tar.gz",
+            "sha256": "c3029b29fa47747b69a1e0d3466af62b26af9ff6a5f10608a3bcdcc076810e4c"
+        },
+        {
+            "arch": "",
             "version": "3.30.0-rc1",
             "download_url": "https://cmake.org/files/v3.30/cmake-3.30.0-rc1-macos-universal.tar.gz",
             "sha256": "f927d88d54503b7dbbf31aae063e924806d51cec266293d2c2156fc2701292cd"
@@ -5668,6 +5674,24 @@
         },
         {
             "arch": "arm64",
+            "version": "3.29.6",
+            "download_url": "https://cmake.org/files/v3.29/cmake-3.29.6-windows-arm64.zip",
+            "sha256": "8f0df498d8b1a076fc9305dde5a06427262a0476e89d4c670a49147b0bc30761"
+        },
+        {
+            "arch": "386",
+            "version": "3.29.6",
+            "download_url": "https://cmake.org/files/v3.29/cmake-3.29.6-windows-i386.zip",
+            "sha256": "aca4abb4ad7eb7d97647a572132735af2bd35687826e96f7d23dd7f4d2d7d4a9"
+        },
+        {
+            "arch": "amd64",
+            "version": "3.29.6",
+            "download_url": "https://cmake.org/files/v3.29/cmake-3.29.6-windows-x86_64.zip",
+            "sha256": "5c648eac06c33477e510bae14ce1f969e9abb38992b71f245633b182fccb474d"
+        },
+        {
+            "arch": "arm64",
             "version": "3.30.0-rc1",
             "download_url": "https://cmake.org/files/v3.30/cmake-3.30.0-rc1-windows-arm64.zip",
             "sha256": "0d7fcb6437863ce70ad6412da79ec35b8abd835b0935275512ce1feeed6b7cd3"
@@ -8523,6 +8547,18 @@
             "version": "3.29.5",
             "download_url": "https://cmake.org/files/v3.29/cmake-3.29.5-linux-x86_64.tar.gz",
             "sha256": "92629f95e15e7c2e88726c57a984ffdc5cf248e354f7ab791bc86d2ad513903e"
+        },
+        {
+            "arch": "386",
+            "version": "3.29.6",
+            "download_url": "https://cmake.org/files/v3.29/cmake-3.29.6-linux-aarch64.tar.gz",
+            "sha256": "4d6b0a551db9da7a034a09372f716cf2094413d7fd8a787051854154b0b3b343"
+        },
+        {
+            "arch": "amd64",
+            "version": "3.29.6",
+            "download_url": "https://cmake.org/files/v3.29/cmake-3.29.6-linux-x86_64.tar.gz",
+            "sha256": "28fef61e64840b784da6db35218fd3ae179ff8bf0be1c8a9d075d6185a0e4fdc"
         },
         {
             "arch": "386",
