@@ -1931,6 +1931,18 @@
             "version": "3.30.4",
             "download_url": "https://cmake.org/files/v3.30/cmake-3.30.4-macos-universal.tar.gz",
             "sha256": "12bfd640048511fafd57cae1944fde7d66182d2cd82de2d5b17944b17fd4efc2"
+        },
+        {
+            "arch": "",
+            "version": "3.30.5",
+            "download_url": "https://cmake.org/files/v3.30/cmake-3.30.5-macos-universal.tar.gz",
+            "sha256": "3d603e507c7579b13518ef752b4ffcf3ed479fba80ee171d7d85da8153e869d0"
+        },
+        {
+            "arch": "",
+            "version": "3.31.0-rc1",
+            "download_url": "https://cmake.org/files/v3.31/cmake-3.31.0-rc1-macos-universal.tar.gz",
+            "sha256": "18246e105a7bb8a319e213659adbbe590caed07b027d9c59bb5f027f61d44e89"
         }
     ],
     "windows": [
@@ -5935,6 +5947,42 @@
             "version": "3.30.4",
             "download_url": "https://cmake.org/files/v3.30/cmake-3.30.4-windows-x86_64.zip",
             "sha256": "cd7363aab96a33237b8913024201863ed218000a0535f3bc9cc6519325416dee"
+        },
+        {
+            "arch": "arm64",
+            "version": "3.30.5",
+            "download_url": "https://cmake.org/files/v3.30/cmake-3.30.5-windows-arm64.zip",
+            "sha256": "b5fa431bd569b591717a9a0f77c0ab56b072ef8603f924401227c178ac7072d9"
+        },
+        {
+            "arch": "386",
+            "version": "3.30.5",
+            "download_url": "https://cmake.org/files/v3.30/cmake-3.30.5-windows-i386.zip",
+            "sha256": "f2534dcd3e09b655c6ec5e0f12264eea8d2a07d276c59f25660c413e63e56730"
+        },
+        {
+            "arch": "amd64",
+            "version": "3.30.5",
+            "download_url": "https://cmake.org/files/v3.30/cmake-3.30.5-windows-x86_64.zip",
+            "sha256": "5ab6e1faf20256ee4f04886597e8b6c3b1bd1297b58a68a58511af013710004b"
+        },
+        {
+            "arch": "arm64",
+            "version": "3.31.0-rc1",
+            "download_url": "https://cmake.org/files/v3.31/cmake-3.31.0-rc1-windows-arm64.zip",
+            "sha256": "0482c35f7697fbc3ad843a8037145ef728e3811eff91803b2a318955e52b873c"
+        },
+        {
+            "arch": "386",
+            "version": "3.31.0-rc1",
+            "download_url": "https://cmake.org/files/v3.31/cmake-3.31.0-rc1-windows-i386.zip",
+            "sha256": "717ed99f13cf41b38d1051d8a5a8e642b5051b9c84766465bfa9157d880856f4"
+        },
+        {
+            "arch": "amd64",
+            "version": "3.31.0-rc1",
+            "download_url": "https://cmake.org/files/v3.31/cmake-3.31.0-rc1-windows-x86_64.zip",
+            "sha256": "f054b2cd7417625799d412f8085870a21955d3b5c3f33ec4a4c8e246b29f4dd0"
         }
     ],
     "linux": [
@@ -8883,6 +8931,30 @@
             "version": "3.30.4",
             "download_url": "https://cmake.org/files/v3.30/cmake-3.30.4-linux-x86_64.tar.gz",
             "sha256": "c959e6d15714f798424960cd296632634f3ef57c2712559a7945170f0bcad205"
+        },
+        {
+            "arch": "386",
+            "version": "3.30.5",
+            "download_url": "https://cmake.org/files/v3.30/cmake-3.30.5-linux-aarch64.tar.gz",
+            "sha256": "da7dead2c92c1747b40d506d7f7d68590f5bab175316d2e7af73e48a2e417e48"
+        },
+        {
+            "arch": "amd64",
+            "version": "3.30.5",
+            "download_url": "https://cmake.org/files/v3.30/cmake-3.30.5-linux-x86_64.tar.gz",
+            "sha256": "f747d9b23e1a252a8beafb4ed2bc2ddf78cff7f04a8e4de19f4ff88e9b51dc9d"
+        },
+        {
+            "arch": "386",
+            "version": "3.31.0-rc1",
+            "download_url": "https://cmake.org/files/v3.31/cmake-3.31.0-rc1-linux-aarch64.tar.gz",
+            "sha256": "abc236d3f3b9c348590abd54d777d9133bba77f20c995b73a2b7cd6d840693b3"
+        },
+        {
+            "arch": "amd64",
+            "version": "3.31.0-rc1",
+            "download_url": "https://cmake.org/files/v3.31/cmake-3.31.0-rc1-linux-x86_64.tar.gz",
+            "sha256": "4095a35a656036effe0d33fd51e15357c7b012a7fa83e6fd17493d1e0fbbbe0f"
         }
     ]
 }
