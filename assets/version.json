@@ -1949,6 +1949,12 @@
             "version": "3.31.0-rc2",
             "download_url": "https://cmake.org/files/v3.31/cmake-3.31.0-rc2-macos-universal.tar.gz",
             "sha256": "1db4197b236f6a3082a48f22c93c6dcd5ace7dd5b38cddc15d7e40329f16eb72"
+        },
+        {
+            "arch": "",
+            "version": "3.31.0-rc3",
+            "download_url": "https://cmake.org/files/v3.31/cmake-3.31.0-rc3-macos-universal.tar.gz",
+            "sha256": "790cf131d984d32700c3be8e81850ce05a243cc51db6a66926fe181a627beaad"
         }
     ],
     "windows": [
@@ -6007,6 +6013,24 @@
             "version": "3.31.0-rc2",
             "download_url": "https://cmake.org/files/v3.31/cmake-3.31.0-rc2-windows-x86_64.zip",
             "sha256": "31a88f30f66f6d85e6e38b3c2ac762e395b84dd42ebafa1980ca51059cbd5af5"
+        },
+        {
+            "arch": "arm64",
+            "version": "3.31.0-rc3",
+            "download_url": "https://cmake.org/files/v3.31/cmake-3.31.0-rc3-windows-arm64.zip",
+            "sha256": "1a15c854b0a6e6715852891188b3c6d87be152db4d80a93d0fd2cd220d3665d1"
+        },
+        {
+            "arch": "386",
+            "version": "3.31.0-rc3",
+            "download_url": "https://cmake.org/files/v3.31/cmake-3.31.0-rc3-windows-i386.zip",
+            "sha256": "111372c6b5434894d8177f0d6fffed96672f92dc7cb0398483ef6313ce61ba07"
+        },
+        {
+            "arch": "amd64",
+            "version": "3.31.0-rc3",
+            "download_url": "https://cmake.org/files/v3.31/cmake-3.31.0-rc3-windows-x86_64.zip",
+            "sha256": "691c4967fdf4fe55f8f15ad82c1529111c535f9d33726ae8daec7569545af4d9"
         }
     ],
     "linux": [
@@ -8991,6 +9015,18 @@
             "version": "3.31.0-rc2",
             "download_url": "https://cmake.org/files/v3.31/cmake-3.31.0-rc2-linux-x86_64.tar.gz",
             "sha256": "08b425efed7f47278ec48026ac0cf259c3aeba7fa89838822148030cc70ae799"
+        },
+        {
+            "arch": "386",
+            "version": "3.31.0-rc3",
+            "download_url": "https://cmake.org/files/v3.31/cmake-3.31.0-rc3-linux-aarch64.tar.gz",
+            "sha256": "05a0a707424e4fe9ff989782eb0a05c7ec34b671316f1b94629b2ec641f6fb88"
+        },
+        {
+            "arch": "amd64",
+            "version": "3.31.0-rc3",
+            "download_url": "https://cmake.org/files/v3.31/cmake-3.31.0-rc3-linux-x86_64.tar.gz",
+            "sha256": "78a248b8eeb582a408ff3b679e4ba56d73512d382f6d3efb12a45ea812a16aa7"
         }
     ]
 }
