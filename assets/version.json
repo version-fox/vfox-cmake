@@ -2147,6 +2147,12 @@
             "version": "4.1.2",
             "download_url": "https://cmake.org/files/v4.1/cmake-4.1.2-macos-universal.tar.gz",
             "sha256": "3be85f5b999e327b1ac7d804cbc9acd767059e9f603c42ec2765f6ab68fbd367"
+        },
+        {
+            "arch": "",
+            "version": "4.2.0-rc1",
+            "download_url": "https://cmake.org/files/v4.2/cmake-4.2.0-rc1-macos-universal.tar.gz",
+            "sha256": "5b321455ff477b3b8210189a43c137ebe8ae7493bcad4707994e8fa33f24f7d7"
         }
     ],
     "windows": [
@@ -6799,6 +6805,24 @@
             "version": "4.1.2",
             "download_url": "https://cmake.org/files/v4.1/cmake-4.1.2-windows-x86_64.zip",
             "sha256": "82730741149681597510a4bc7095da1460b472dac24eaf9c23ad7440f47753ab"
+        },
+        {
+            "arch": "arm64",
+            "version": "4.2.0-rc1",
+            "download_url": "https://cmake.org/files/v4.2/cmake-4.2.0-rc1-windows-arm64.zip",
+            "sha256": "2a908bbf090f2a3e3f924ce612c92c7489afbb4a22bdd6a16cece18c47df88f9"
+        },
+        {
+            "arch": "386",
+            "version": "4.2.0-rc1",
+            "download_url": "https://cmake.org/files/v4.2/cmake-4.2.0-rc1-windows-i386.zip",
+            "sha256": "a5eb5e0400ddd24c0e4d29033267eeb909afb3691e2c635099157590301bf9b5"
+        },
+        {
+            "arch": "amd64",
+            "version": "4.2.0-rc1",
+            "download_url": "https://cmake.org/files/v4.2/cmake-4.2.0-rc1-windows-x86_64.zip",
+            "sha256": "7a2d53beb0c85d2d4f3566f342ac48da760cb7466ce9a0eea8c32eca3da204f9"
         }
     ],
     "linux": [
@@ -10179,6 +10203,18 @@
             "version": "4.1.2",
             "download_url": "https://cmake.org/files/v4.1/cmake-4.1.2-linux-x86_64.tar.gz",
             "sha256": "773cc679c3a7395413bd096523f8e5d6c39f8718af4e12eb4e4195f72f35e4ab"
+        },
+        {
+            "arch": "386",
+            "version": "4.2.0-rc1",
+            "download_url": "https://cmake.org/files/v4.2/cmake-4.2.0-rc1-linux-aarch64.tar.gz",
+            "sha256": "b81e81690916a3adf05072a6bb6ed78a7cb101caa6d3d8c9c9f1f4c1d66f1253"
+        },
+        {
+            "arch": "amd64",
+            "version": "4.2.0-rc1",
+            "download_url": "https://cmake.org/files/v4.2/cmake-4.2.0-rc1-linux-x86_64.tar.gz",
+            "sha256": "548f50e8f95d3d3c0f0e22f37e5451f7084d58881d03720e8a35c2fc97dacaf3"
         }
     ]
 }
