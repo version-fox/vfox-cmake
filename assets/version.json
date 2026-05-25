@@ -2270,6 +2270,12 @@
         },
         {
             "arch": "",
+            "version": "4.2.6",
+            "download_url": "https://cmake.org/files/v4.2/cmake-4.2.6-macos-universal.tar.gz",
+            "sha256": "519eeb65490b3e08c6efe5f0e40dd97d6848c1d5051173c42ba883063cc89e6c"
+        },
+        {
+            "arch": "",
             "version": "4.3.0",
             "download_url": "https://cmake.org/files/v4.3/cmake-4.3.0-macos-universal.tar.gz",
             "sha256": "5bd933daf6e9234a53a9a43092746993870d9f162b6c399fd6e4a05cdd475e67"
@@ -2303,6 +2309,12 @@
             "version": "4.3.2",
             "download_url": "https://cmake.org/files/v4.3/cmake-4.3.2-macos-universal.tar.gz",
             "sha256": "808ab43a0db04c8eec9ed7db12b90d7be1c8e2e75f4a060724d604a2043ccaf7"
+        },
+        {
+            "arch": "",
+            "version": "4.3.3",
+            "download_url": "https://cmake.org/files/v4.3/cmake-4.3.3-macos-universal.tar.gz",
+            "sha256": "5221a13450c7a0219a2a0d1b6c9085eb06489721fafd8488ccebc1584175d2fb"
         }
     ],
     "windows": [
@@ -7318,6 +7330,24 @@
         },
         {
             "arch": "arm64",
+            "version": "4.2.6",
+            "download_url": "https://cmake.org/files/v4.2/cmake-4.2.6-windows-arm64.zip",
+            "sha256": "1368d8e6324ac33fbadcd26993cbcb5872e9d6f5f86908e5de4c633e9bcebdd7"
+        },
+        {
+            "arch": "386",
+            "version": "4.2.6",
+            "download_url": "https://cmake.org/files/v4.2/cmake-4.2.6-windows-i386.zip",
+            "sha256": "f1d72f44f9668fc1a7fca9a988dd4ef11566a82aaca07881c955261becc2fbeb"
+        },
+        {
+            "arch": "amd64",
+            "version": "4.2.6",
+            "download_url": "https://cmake.org/files/v4.2/cmake-4.2.6-windows-x86_64.zip",
+            "sha256": "71b908f4365b2eccf72896b5d2046f2a35e6eb8fab509f1ff153c20623c3ec04"
+        },
+        {
+            "arch": "arm64",
             "version": "4.3.0",
             "download_url": "https://cmake.org/files/v4.3/cmake-4.3.0-windows-arm64.zip",
             "sha256": "174cdb8a877ce9d27ce2e7bd5ed74e48b333fb87b82ed7962c6c2325d35065e1"
@@ -7423,6 +7453,24 @@
             "version": "4.3.2",
             "download_url": "https://cmake.org/files/v4.3/cmake-4.3.2-windows-x86_64.zip",
             "sha256": "83d20c23f5c5f64b3b328785e35b23c532e33057a97ed6294acaca3781b78a01"
+        },
+        {
+            "arch": "arm64",
+            "version": "4.3.3",
+            "download_url": "https://cmake.org/files/v4.3/cmake-4.3.3-windows-arm64.zip",
+            "sha256": "db6e902b5ba6a08d0abed136763c4bd95adda17e882d659c0f5d14fe158f7395"
+        },
+        {
+            "arch": "386",
+            "version": "4.3.3",
+            "download_url": "https://cmake.org/files/v4.3/cmake-4.3.3-windows-i386.zip",
+            "sha256": "7edb486ab7f58d802a73890f217faae7e4f95634cbc271f5e4c2428288812444"
+        },
+        {
+            "arch": "amd64",
+            "version": "4.3.3",
+            "download_url": "https://cmake.org/files/v4.3/cmake-4.3.3-windows-x86_64.zip",
+            "sha256": "935ade9e5e8723583c07f44c5592cea2a1c8f65c56ca7e07b34c025c880e0bd6"
         }
     ],
     "linux": [
@@ -11046,6 +11094,18 @@
         },
         {
             "arch": "386",
+            "version": "4.2.6",
+            "download_url": "https://cmake.org/files/v4.2/cmake-4.2.6-linux-aarch64.tar.gz",
+            "sha256": "f586ce20374c9f4873edf6e6f4a060dd26c3b723f9b6d14d3a37adbfcd37f61a"
+        },
+        {
+            "arch": "amd64",
+            "version": "4.2.6",
+            "download_url": "https://cmake.org/files/v4.2/cmake-4.2.6-linux-x86_64.tar.gz",
+            "sha256": "c9566ac9c2c75901c892f1c6765891a32063692432c3f8645770bbe00628dd50"
+        },
+        {
+            "arch": "386",
             "version": "4.3.0",
             "download_url": "https://cmake.org/files/v4.3/cmake-4.3.0-linux-aarch64.tar.gz",
             "sha256": "26fe3011f497eb9398115dcabcc094685e634b1841f7c01dc01c5a89b8b0ea0d"
@@ -11115,6 +11175,18 @@
             "version": "4.3.2",
             "download_url": "https://cmake.org/files/v4.3/cmake-4.3.2-linux-x86_64.tar.gz",
             "sha256": "791ae3604841ca03cb3889a3ad89165346e4b180ae3448efd4b0caa9ef46d245"
+        },
+        {
+            "arch": "386",
+            "version": "4.3.3",
+            "download_url": "https://cmake.org/files/v4.3/cmake-4.3.3-linux-aarch64.tar.gz",
+            "sha256": "9ea38356dbd3e32e51029a3e09a0f2f8e117ef4fbcaad7a21ffb36409bbd5cb4"
+        },
+        {
+            "arch": "amd64",
+            "version": "4.3.3",
+            "download_url": "https://cmake.org/files/v4.3/cmake-4.3.3-linux-x86_64.tar.gz",
+            "sha256": "927b2368a946c37269c3a66225ab00544e756459cdd0b5d0da438694fb9ff802"
         }
     ]
 }
