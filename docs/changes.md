@@ -4,7 +4,7 @@
 
 What changed in each release, as a user notices it. GitHub's release pages list the pull requests.
 
-## Unreleased
+## 0.2.0 (2026-11-17)
 
 - `vfox link --detect cmake` adopts a CMake that is already on the machine
   instead of downloading another copy: anything on `PATH`, system CMake,
@@ -21,12 +21,12 @@ What changed in each release, as a user notices it. GitHub's release pages list 
   analysis, license-header checks, GitHub Actions lint/license/test/E2E
   workflows, and Linux and Windows container E2E suites.
 
-## 0.1.7
+## 0.1.7 (2025-09-29)
 
 - Fixed the version scraper and refreshed `assets/version.json`.
 - Switched releases to the shared `plugin-manifest-action` workflow.
 
-## 0.1.x
+## 0.1.x (2024-04-14)
 
 - Initial plugin: install official CMake releases on Linux, macOS and Windows,
   with SHA-256 verification and a `PATH` entry from the EnvKeys hook.

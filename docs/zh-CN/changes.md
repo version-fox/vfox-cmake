@@ -4,7 +4,7 @@
 
 按发布版本列出用户能感受到的变化。GitHub 的 Release 页面列出了对应的 PR。
 
-## 未发布
+## 0.2.0（2026-11-17）
 
 - `vfox link --detect cmake` 会直接采用本机上已有的 CMake，而不再下载一份：
   `PATH` 上的、系统自带的、Homebrew、Scoop、Chocolatey 装的，以及 `CMAKE_HOME`
@@ -19,12 +19,12 @@
 - 新增完整的中英文文档、Lua 格式化与静态分析、license 头检查、GitHub Actions
   的 lint/license/test/E2E workflow，以及 Linux 和 Windows 容器端到端测试。
 
-## 0.1.7
+## 0.1.7（2025-09-29）
 
 - 修复版本抓取脚本并更新 `assets/version.json`。
 - 发布切换到共享的 `plugin-manifest-action` workflow。
 
-## 0.1.x
+## 0.1.x（2024-04-14）
 
 - 初始版本：在 Linux、macOS 和 Windows 上安装 CMake 官方发布版，带 SHA-256
   校验，并由 EnvKeys hook 写入 `PATH`。
