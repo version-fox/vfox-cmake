@@ -24,7 +24,7 @@ ENV VFOX_HOME=C:\vfox-home
 ARG VFOX_VERSION=1.1.0
 ARG VFOX_SHA256=1bbec8fffddbb62de0d93030c3f6203c69680662bc65257ca4a5e611cb607d0a
 
-RUN $ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue'; Invoke-WebRequest -UseBasicParsing -Uri "https://github.com/version-fox/vfox/releases/download/v${VFOX_VERSION}/vfox_${VFOX_VERSION}_windows_x86_64.zip" -OutFile C:\vfox.zip; if ((Get-FileHash -Algorithm SHA256 C:\vfox.zip).Hash.ToLower() -ne "${VFOX_SHA256}") { throw 'vfox checksum mismatch' }; Expand-Archive -Force -Path C:\vfox.zip -DestinationPath C:\vfox; $exe = Get-ChildItem -Path C:\vfox -Filter vfox.exe -Recurse | Select-Object -First 1; Copy-Item -Path $exe.FullName -Destination C:\Windows\System32\vfox.exe; Remove-Item -Force C:\vfox.zip; Remove-Item -Recurse -Force C:\vfox
+RUN $ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue'; $ver = $env:VFOX_VERSION; $expected = $env:VFOX_SHA256; Invoke-WebRequest -UseBasicParsing -Uri "https://github.com/version-fox/vfox/releases/download/v${ver}/vfox_${ver}_windows_x86_64.zip" -OutFile C:\vfox.zip; if ((Get-FileHash -Algorithm SHA256 C:\vfox.zip).Hash.ToLower() -ne $expected) { throw 'vfox checksum mismatch' }; Expand-Archive -Force -Path C:\vfox.zip -DestinationPath C:\vfox; $exe = Get-ChildItem -Path C:\vfox -Filter vfox.exe -Recurse | Select-Object -First 1; Copy-Item -Path $exe.FullName -Destination C:\Windows\System32\vfox.exe; Remove-Item -Force C:\vfox.zip; Remove-Item -Recurse -Force C:\vfox
 
 RUN New-Item -ItemType Directory -Force -Path C:\vfox-home\plugin\cmake | Out-Null
 COPY metadata.lua C:/vfox-home/plugin/cmake/metadata.lua
