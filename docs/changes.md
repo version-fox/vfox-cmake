@@ -13,8 +13,9 @@ What changed in each release, as a user notices it. GitHub's release pages list 
 - `PreInstall` now resolves the `latest` marker and an empty version to a
   concrete release (vfox 0.6.0 passed them through unchanged), accepts an
   optional leading `v`, and reports missing versions with a clear error
-  instead of returning an empty table. Added offline tests for all of these
-  cases.
+  instead of returning an empty table. The release catalogue is now replaced
+  rather than appended on each refresh, so repeated lookups no longer collect
+  duplicates. Added offline tests for all of these cases.
 
 ## 0.2.0 (2026-11-17)
 

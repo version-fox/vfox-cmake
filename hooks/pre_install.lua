@@ -20,23 +20,23 @@ local util = require("util")
 function PLUGIN:PreInstall(ctx)
     local requested = (ctx and ctx.version) or ""
 
+    -- Accept an optional leading "v", often copied from a release tag.
+    -- vfox strips it on the ordinary install path, but not for versions
+    -- coming from a config file via `vfox install --all`.
+    local version = requested:gsub("^v", "")
+
     -- vfox 0.6.0 passes the "latest" marker (or an empty version) straight
     -- through to PreInstall instead of resolving it from Available first.
     -- Resolve it here so the hook always returns a concrete version: vfox
     -- reports a missing `version` field as "no version number provided".
     -- See https://github.com/version-fox/vfox-cmake/issues/1
-    if requested == "" or requested == "latest" then
+    if version == "" or version == "latest" then
         local available = self:Available(ctx)
         assert(#available > 0, "no CMake release available for " .. RUNTIME.osType .. "/" .. RUNTIME.archType)
-        requested = available[1].version
-    end
-
-    if #util.RELEASES == 0 then
+        version = available[1].version
+    elseif #util.RELEASES == 0 then
         self:Available(ctx)
     end
-
-    -- Accept an optional leading "v", often copied from a release tag.
-    local version = requested:gsub("^v", "")
 
     for _, release in ipairs(util.RELEASES) do
         if release.version == version then

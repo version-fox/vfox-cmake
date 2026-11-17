@@ -77,8 +77,14 @@ end)
 check(not ok, "unknown version fails instead of returning an empty table")
 check(tostring(err):find("9.9.9", 1, true) ~= nil, "error names the missing version")
 
--- ARM Linux (including WSL on ARM) must see the aarch64 releases.
+-- Resolving "latest" refreshes the release list; repeated calls must not
+-- accumulate duplicate entries in the cached list.
 local util = require("util")
+local before = #util.RELEASES
+plugin:PreInstall({ version = "latest" })
+check(#util.RELEASES == before, "repeated lookups do not duplicate releases")
+
+-- ARM Linux (including WSL on ARM) must see the aarch64 releases.
 RUNTIME.archType = "arm64"
 util.RELEASES = {}
 info = plugin:PreInstall({ version = "3.30.0" })
