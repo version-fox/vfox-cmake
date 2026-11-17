@@ -67,7 +67,10 @@ func TestE2E(t *testing.T) {
 	install := installCMake(t, name)
 	common.AssertContains(t, install, "Install cmake@"+common.CMakeVersion+" success!", "install")
 
-	executed := common.ExecOK(t, name, "vfox", "exec", "cmake@"+common.CMakeVersion, "--", "cmake", "--version")
+	// vfox 1.1.0's `vfox exec` resolves the executable by stat-ing the bare
+	// command name, which on Windows does not find cmake.exe. Pass the
+	// extension explicitly; a real shell resolves "cmake" via PATHEXT.
+	executed := common.ExecOK(t, name, "vfox", "exec", "cmake@"+common.CMakeVersion, "--", "cmake.exe", "--version")
 	common.AssertContains(t, executed, "cmake version "+common.CMakeVersion, "vfox exec runs the installed CMake")
 
 	verifyDetect(t, name)
@@ -113,7 +116,7 @@ func verifyDetect(t *testing.T, name string) {
 	list := common.ExecOK(t, name, "vfox", "list", "cmake")
 	common.AssertContains(t, list, "linked", "list shows the linked version")
 
-	run := common.ExecOK(t, name, "vfox", "exec", "cmake@"+common.DetectVersion, "--", "cmake", "--version")
+	run := common.ExecOK(t, name, "vfox", "exec", "cmake@"+common.DetectVersion, "--", "cmake.exe", "--version")
 	common.AssertContains(t, run, "cmake version "+common.DetectVersion, "linked version is usable")
 }
 
