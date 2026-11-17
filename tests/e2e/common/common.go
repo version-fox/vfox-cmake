@@ -31,8 +31,6 @@ import (
 const (
 	// VfoxVersion is pinned to the first release with the Detect hook.
 	VfoxVersion = "1.1.0"
-	// VfoxSha256 is the digest of vfox_1.1.0_linux_x86_64.tar.gz.
-	VfoxSha256 = "3b33c3c468b27bc17aecf0d6d3af24fe49fe204972984904a136a47b402a0ee4"
 	// CMakeVersion is the release installed by the E2E suites. It is present
 	// in assets/version.json for every platform the plugin supports.
 	CMakeVersion = "3.31.6"

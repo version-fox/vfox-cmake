@@ -22,6 +22,9 @@ vfox use cmake@3.31.6
 vfox exec cmake@3.31.6 -- cmake --version
 ```
 
+Windows 上 vfox 1.1.0 的 `exec` 需要带扩展名：用
+`vfox exec cmake@3.31.6 -- cmake.exe --version`。
+
 已经链接过的版本可以用 `vfox link --force cmake@3.31.6 <路径>` 改指向别的
 目录；`vfox unlink cmake@3.31.6` 删除链接。
 

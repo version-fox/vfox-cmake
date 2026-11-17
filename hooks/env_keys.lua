@@ -26,13 +26,16 @@ end
 --- Note: Be sure to distinguish between environment variable settings for different platforms!
 --- The bin directory is discovered rather than assumed: vfox-installed CMake
 --- lives under `<root>/bin` (or `<root>/CMake.app/Contents/bin` on macOS),
---- while a linked system CMake keeps the layout it was installed with.
+--- while a linked system CMake keeps the layout it was installed with. A
+--- binary found directly in a PATH directory has that directory as its root,
+--- so the root itself is probed too.
 --- @param ctx table Context information; `ctx.path` is the SDK installation directory
 function PLUGIN:EnvKeys(ctx)
     local mainPath = ctx.path
     local candidates = {
         mainPath .. "/CMake.app/Contents/bin",
         mainPath .. "/bin",
+        mainPath,
     }
     for _, bin in ipairs(candidates) do
         if is_file(bin .. "/cmake") or is_file(bin .. "/cmake.exe") then

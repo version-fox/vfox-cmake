@@ -16,9 +16,6 @@ What changed in each release, as a user notices it. GitHub's release pages list 
   instead of returning an empty table. The release catalogue is now replaced
   rather than appended on each refresh, so repeated lookups no longer collect
   duplicates. Added offline tests for all of these cases.
-
-## 0.2.0 (2026-11-17)
-
 - `vfox link --detect cmake` adopts a CMake that is already on the machine
   instead of downloading another copy: anything on `PATH`, system CMake,
   Homebrew, Scoop, Chocolatey and an explicit `CMAKE_HOME`. Each candidate is
@@ -27,12 +24,18 @@ What changed in each release, as a user notices it. GitHub's release pages list 
   which is now the plugin's `minRuntimeVersion`.
 - `EnvKeys` discovers the actual `bin` directory of an installed or linked
   CMake instead of assuming the vfox layout, so linked system installs work on
-  every platform, including macOS app bundles.
+  every platform, including macOS app bundles. It also accepts a `cmake`
+  found directly in a directory on `PATH`, which Detect can otherwise offer
+  but vfox refuses to link.
 - Added offline hook tests for the version comparison, Detect and EnvKeys
   logic, run by `vfox plugin test .` on Linux in CI.
 - Added complete English and Chinese documentation, Lua formatting and static
   analysis, license-header checks, GitHub Actions lint/license/test/E2E
   workflows, and Linux and Windows container E2E suites.
+- Corrected documentation that described a released `0.2.0`; the plugin is
+  still at `0.1.7` and these changes are unreleased. Fixed inaccurate E2E
+  retry count, CI commands and macOS/Windows examples, and removed a stale
+  actionlint configuration for runner labels that are not used.
 
 ## 0.1.7 (2025-09-29)
 
