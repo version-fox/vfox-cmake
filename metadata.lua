@@ -1,3 +1,17 @@
+-- Copyright 2026 Han Li and contributors
+--
+-- Licensed under the Apache License, Version 2.0 (the "License");
+-- you may not use this file except in compliance with the License.
+-- You may obtain a copy of the License at
+--
+--   http://www.apache.org/licenses/LICENSE-2.0
+--
+-- Unless required by applicable law or agreed to in writing, software
+-- distributed under the License is distributed on an "AS IS" BASIS,
+-- WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+-- See the License for the specific language governing permissions and
+-- limitations under the License.
+
 --- !!! DO NOT EDIT OR RENAME !!!
 PLUGIN = {}
 
@@ -5,14 +19,13 @@ PLUGIN = {}
 --- Plugin name
 PLUGIN.name = "cmake"
 --- Plugin version
-PLUGIN.version = "0.1.7"
+PLUGIN.version = "0.2.0"
 --- Plugin homepage
 PLUGIN.homepage = "https://github.com/version-fox/vfox-cmake"
 --- Plugin license, please choose a correct license according to your needs.
 PLUGIN.license = "Apache 2.0"
 --- Plugin description
 PLUGIN.description = "Cmake plugin, https://cmake.org/"
-
 
 --- !!! OPTIONAL !!!
 --[[
@@ -21,7 +34,7 @@ NOTE:
     If the plugin is not compatible with the current vfox version,
     vfox will not load the plugin and prompt the user to upgrade vfox.
  --]]
-PLUGIN.minRuntimeVersion = "0.3.0"
+PLUGIN.minRuntimeVersion = "1.1.0"
 --[[
 NOTE:
     If configured, vfox will check for updates to the plugin at this address,
@@ -37,4 +50,5 @@ PLUGIN.manifestUrl = "https://github.com/version-fox/vfox-cmake/releases/downloa
 -- Some things that need user to be attention!
 PLUGIN.notes = {
     "Supports version 3.0 and above.",
+    "Usage and system SDK detection: https://github.com/version-fox/vfox-cmake/blob/main/README.md",
 }

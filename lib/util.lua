@@ -1,3 +1,17 @@
+-- Copyright 2026 Han Li and contributors
+--
+-- Licensed under the Apache License, Version 2.0 (the "License");
+-- you may not use this file except in compliance with the License.
+-- You may obtain a copy of the License at
+--
+--   http://www.apache.org/licenses/LICENSE-2.0
+--
+-- Unless required by applicable law or agreed to in writing, software
+-- distributed under the License is distributed on an "AS IS" BASIS,
+-- WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+-- See the License for the specific language governing permissions and
+-- limitations under the License.
+
 local http = require("http")
 local json = require("json")
 
@@ -7,7 +21,7 @@ util.__index = util
 local utilSingleton = setmetatable({}, util)
 
 utilSingleton.BASE_URL = "https://cmake.org/files/"
-utilSingleton.RELEASES ={}
+utilSingleton.RELEASES = {}
 
 function util:compare_versions(v1o, v2o)
     local v1 = v1o.version
@@ -38,7 +52,7 @@ end
 function util:getInfo()
     local result = {}
     local resp, err = http.get({
-        url = "https://fastly.jsdelivr.net/gh/version-fox/vfox-cmake@main/assets/version.json"
+        url = "https://fastly.jsdelivr.net/gh/version-fox/vfox-cmake@main/assets/version.json",
     })
 
     if err ~= nil then
@@ -50,16 +64,16 @@ function util:getInfo()
 
     local respInfo = json.decode(resp.body)[RUNTIME.osType]
     for _, obj in ipairs(respInfo) do
-        if obj.arch=="" then
-            table.insert(result, {version = obj.version,note=""})
-            table.insert(utilSingleton.RELEASES,{version = obj.version,url=obj.download_url,sha256=obj.sha256})
+        if obj.arch == "" then
+            table.insert(result, { version = obj.version, note = "" })
+            table.insert(utilSingleton.RELEASES, { version = obj.version, url = obj.download_url, sha256 = obj.sha256 })
         elseif obj.arch == RUNTIME.archType then
-            table.insert(result, {version = obj.version,note=""})
-            table.insert(utilSingleton.RELEASES,{version = obj.version,url=obj.download_url,sha256=obj.sha256})
+            table.insert(result, { version = obj.version, note = "" })
+            table.insert(utilSingleton.RELEASES, { version = obj.version, url = obj.download_url, sha256 = obj.sha256 })
         end
     end
     table.sort(result, function(a, b)
-        return util:compare_versions(a,b)
+        return util:compare_versions(a, b)
     end)
     return result
 end

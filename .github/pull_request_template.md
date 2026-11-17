@@ -1,21 +1,23 @@
-# Release vX.X.X
+# Summary
 
-## Changes
+<!-- What does this change and why? Use plain language. -->
 
-Please briefly describe the main changes included in this release:
+## Type of change
 
-- [ ] New features/fixes description
-- [ ] Dependency updates description
-- [ ] Other important information
+- [ ] Bug fix
+- [ ] New feature
+- [ ] Documentation
+- [ ] Build / CI / tooling
 
 ## Checklist
 
-- [ ] Updated `CHANGELOG.md`
-- [ ] All tests passed
-- [ ] Necessary documentation updated
-- [ ] Version number correctly bumped
-- [ ] Linked to relevant Issue/discussion (if any)
+- [ ] Updated `docs/changes.md` and `docs/zh-CN/changes.md`
+- [ ] `vfox plugin test .` passes (offline hook tests)
+- [ ] `stylua --check .` passes (Lua formatting)
+- [ ] License headers added to new source files
+- [ ] Documentation updated in both English and Chinese where relevant
+- [ ] E2E impact considered (Linux / Windows containers)
 
-## Related Links
+## Related links
 
-- Issue/discussion link:
+<!-- Issue or discussion link, if any. -->
