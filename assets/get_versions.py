@@ -77,10 +77,16 @@ def get_info():
                             elif  arch == "arm64":
                                 releases["windows"].append({'arch':'arm64','version': version, 'download_url': download_url, 'sha256': sha256})
                         elif os == "linux":
-                            if arch in ["i386", "aarch64"]:
+                            if arch == "i386":
                                 releases["linux"].append({'arch':'386','version': version, 'download_url': download_url, 'sha256': sha256})
                             elif arch == "x86_64":
                                 releases["linux"].append({'arch':'amd64','version': version, 'download_url': download_url, 'sha256': sha256})
+                            elif arch == "aarch64":
+                                # vfox reports arm64 as RUNTIME.archType on ARM
+                                # Linux (including WSL). aarch64 used to be
+                                # stored as 386, so no release ever matched
+                                # and PreInstall returned no version at all.
+                                releases["linux"].append({'arch':'arm64','version': version, 'download_url': download_url, 'sha256': sha256})
     with open("version.json", 'w', encoding="utf-8") as file:
         json.dump(releases, file, indent=4)
 

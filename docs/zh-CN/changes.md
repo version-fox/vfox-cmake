@@ -4,6 +4,16 @@
 
 按发布版本列出用户能感受到的变化。GitHub 的 Release 页面列出了对应的 PR。
 
+## 未发布
+
+- 修复 ARM Linux（含 WSL）上的 `plugin [PreInstall] method error: no version
+  number provided`。版本抓取脚本把 `aarch64` 压缩包归到 `386` 架构下，导致
+  `arm64` 匹配不到任何版本、hook 返回空版本号。`assets/version.json` 现在
+  将其正确归类为 `arm64`。
+- `PreInstall` 现在会把 `latest` 标记和空版本解析成具体版本（vfox 0.6.0 会
+  原样传入），也接受开头的 `v`；找不到版本时给出明确错误，而不再返回空表。
+  以上情况均已加入离线单测。
+
 ## 0.2.0（2026-11-17）
 
 - `vfox link --detect cmake` 会直接采用本机上已有的 CMake，而不再下载一份：

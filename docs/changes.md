@@ -4,6 +4,18 @@
 
 What changed in each release, as a user notices it. GitHub's release pages list the pull requests.
 
+## Unreleased
+
+- Fixed `plugin [PreInstall] method error: no version number provided` on ARM
+  Linux, including WSL. The release scraper stored `aarch64` archives under
+  the `386` architecture, so no release matched `arm64` and the hook returned
+  no version at all. `assets/version.json` now classifies them as `arm64`.
+- `PreInstall` now resolves the `latest` marker and an empty version to a
+  concrete release (vfox 0.6.0 passed them through unchanged), accepts an
+  optional leading `v`, and reports missing versions with a clear error
+  instead of returning an empty table. Added offline tests for all of these
+  cases.
+
 ## 0.2.0 (2026-11-17)
 
 - `vfox link --detect cmake` adopts a CMake that is already on the machine
