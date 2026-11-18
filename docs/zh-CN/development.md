@@ -10,8 +10,8 @@
 - vfox 1.1.0 或更高版本（`vfox plugin test` 需要 1.0.13+，Detect hook 需要 1.1.0）；
 - Go 1.24 或更高版本，用于 E2E 测试和 license 工具；
 - Docker，用于 E2E 测试，以及在临时容器里跑检查；
-- StyLua 2.5.2 和 lua-language-server 3.19.1（也可以用下面的 Docker 命令，它会
-  下载固定版本）。
+- StyLua 2.5.2 和 lua-language-server 3.19.1。下面 Lua 格式化一节的 Docker 命令会
+  下载固定版本的 StyLua。
 
 ## 离线 hook 测试
 
@@ -19,8 +19,12 @@
 vfox plugin test .
 ```
 
-它会找到每个 `tests/**/*_test.lua`，在独立的 VM 里运行，并 mock 掉 `io.open`、
-`io.popen` 和 HTTP；插件报错即失败，不需要网络。
+它会找到每个 `tests/**/*_test.lua`，并让每个文件在各自的 VM 里运行。每个文件通过
+`vfox.test` 的 `test.load()` 加载插件，该函数接受 `os`、`arch`、`env`、`http` 等
+选项，测试用它们伪造平台、环境变量和 HTTP 响应。没有调用 `test.load()` 的文件、
+出错的文件，以及一次运行中找不到任何测试文件，都会失败。这些 VM 里 `io.popen`
+被禁用，需要执行命令的测试要用 Lua 桩函数替换它，例如 `detect_cmake_test.lua`。
+需要假文件的测试同样替换 `io.open`。不需要网络。
 
 ## Lua 格式化
 

@@ -32,7 +32,8 @@ const (
 	// VfoxVersion is pinned to the first release with the Detect hook.
 	VfoxVersion = "1.1.0"
 	// CMakeVersion is the release installed by the E2E suites. It is present
-	// in assets/version.json for every platform the plugin supports.
+	// in assets/version.json for linux/amd64 and windows/amd64, where the
+	// suites run.
 	CMakeVersion = "3.31.6"
 	// DetectVersion is the version reported by the stub CMake the suites put
 	// on PATH to exercise `vfox link --detect cmake`. It differs from the

@@ -26,7 +26,8 @@ On Windows, vfox 1.1.0's `exec` needs the extension: use
 `vfox exec cmake@3.31.6 -- cmake.exe --version`.
 
 Use `vfox link --force cmake@3.31.6 <path>` to point an already linked version
-at a different directory. `vfox unlink cmake@3.31.6` removes a link.
+at a different directory. `vfox uninstall cmake@3.31.6` removes a link and
+leaves the CMake it points to untouched.
 
 ## What is scanned
 

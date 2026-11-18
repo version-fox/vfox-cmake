@@ -11,17 +11,10 @@ plugin can be refreshed with `vfox update cmake`.
 
 ## `plugin [PreInstall] method error: no version number provided`
 
-Older releases of this plugin reported this error when they could not find a
-release for the requested version and your platform. From 0.1.8 the error names
-the missing version and platform instead, for example
-`CMake version 3.31.6 is not available for linux/arm64`.
-
-One known cause is fixed in 0.1.8. On ARM Linux (including WSL on ARM), older
-version data mislabelled `aarch64` archives as `386`, so no `arm64` release was
-ever offered. The corrected version data is read from the jsDelivr mirror at run
-time, so you do not need a plugin update for it. If `vfox search cmake` still
-lists no `arm64` versions, the mirror may still serve an old copy; try again
-later.
+Plugin versions before 0.1.8 print this error when they cannot find a release
+for the requested version and your platform. Run `vfox update cmake` to get the
+current plugin, which names the missing version and platform instead, for
+example `CMake version 3.31.6 is not available for linux/arm64`.
 
 This plugin needs vfox 1.1.0 or later (its `minRuntimeVersion`). If you are on an
 older vfox, upgrade it first.

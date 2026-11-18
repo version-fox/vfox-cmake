@@ -10,14 +10,9 @@ Available hook 通过本仓库的 jsDelivr 镜像读取 `assets/version.json`。
 
 ## `plugin [PreInstall] method error: no version number provided`
 
-旧版本的插件在找不到与所请求版本及当前平台匹配的发布包时会报这个错误。
-0.1.8 起，错误会直接写明缺失的版本和平台，例如
+0.1.8 之前的插件在找不到与所请求版本及当前平台匹配的发布包时会报这个错误。执行
+`vfox update cmake` 更新到当前插件，它会直接写明缺失的版本和平台，例如
 `CMake version 3.31.6 is not available for linux/arm64`。
-
-0.1.8 修复了一个已知原因：在 ARM Linux（含 ARM 架构的 WSL）上，旧版本数据把
-`aarch64` 压缩包误标成 `386`，因此永远匹配不到 `arm64` 版本。修正后的版本数据在
-运行时从 jsDelivr 镜像读取，所以不需要为此更新插件。如果 `vfox search cmake`
-仍然列不出 `arm64` 版本，说明镜像可能还在提供旧文件，稍后再试。
 
 本插件需要 vfox 1.1.0 或更高版本（即 `minRuntimeVersion`）。如果你用的是更旧的
 vfox，请先升级。

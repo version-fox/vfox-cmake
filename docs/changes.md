@@ -6,6 +6,8 @@ What changed in each release, as a user notices it. GitHub's release pages list 
 
 ## Unreleased
 
+## 0.1.9 (2026-11-18)
+
 - `vfox install cmake@latest` installs the newest release, such as `4.5.0`,
   instead of a release candidate such as `4.5.0-rc3`. A candidate and its
   release used to compare as equal, so the list could start with a candidate.
