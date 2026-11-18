@@ -32,10 +32,7 @@ def get_info():
         sn = re.match(r'^v\d', href)
         es = href.endswith('/')
         version = href[:-1]
-        # The plugin supports CMake 3.0 and later (see metadata.lua), so the
-        # 2.x release directories are skipped.
-        major = re.match(r'^v(\d+)\.', href)
-        if sn and es and major and int(major.group(1)) >= 3:
+        if sn and es :
             big_version_urls.append(base_url + version)
 
     pattern = r"cmake-(\d+\.\d+\.?\d*[-\w\d]*)-([\w\d]+)-([\w\d_-]+)"
