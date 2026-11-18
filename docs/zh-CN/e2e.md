@@ -29,10 +29,10 @@ CMake 只能由 vfox 安装。
 2. **插件** — `vfox --version` 是固定的 1.1.0，`vfox search cmake` 列出固定版本
    3.31.6。
 3. **安装** — `vfox install cmake@3.31.6` 成功。下载来自 cmake.org，所以测试
-   重试三次，以吸收短暂的网络故障。
+   重试五次，以吸收短暂的网络故障。
 4. **执行** — `vfox exec cmake@3.31.6 -- cmake --version` 打印
-   `cmake version 3.31.6`。这证明 EnvKeys hook 把正确的 `bin` 目录放进了
-   `PATH`。
+   `cmake version 3.31.6`（Windows 上用 `-- cmake.exe --version`）。这证明
+   EnvKeys hook 把正确的 `bin` 目录放进了 `PATH`。
 5. **检测** — 把一个报告 3.20.0 的 CMake 形状 stub 放进 `PATH`。
    `vfox link --detect cmake --yes` 必须找到它、链接它，链接后的版本还要能用
    `vfox exec` 跑起来。
@@ -55,8 +55,10 @@ go test -v -timeout 20m -run TestE2E ./windows   # Windows 主机，Windows 容�
 
 `.github/workflows/e2e.yml` 在 `ubuntu-latest` 上跑 `e2e-linux`，在
 `windows-latest` 上跑 `e2e-windows`。两者都装好 Go，然后运行对应的
-`go test -v -run TestE2E ./...`。并发组会取消被新提交取代的 PR 运行，但让默认
-分支上的每个提交都跑完。
+`go test -v -timeout 40m -run TestE2E ./linux`（或 `./windows`），每个 runner
+只跑自己那套。并发组会取消被新提交取代的 PR 运行，但让默认分支上的每个提交都
+跑完。
 
-不使用容器的 hook 测试在 `.github/workflows/test.yml` 里，它还用 vfox 的 Lua
-解释器跑 macOS 文件系统布局检查。
+不使用容器的 hook 测试在 `.github/workflows/test.yml` 里，在 `ubuntu-latest` 上
+执行 `vfox plugin test .`。CI 没有 macOS runner；macOS 的 app bundle 布局由离线
+的 `EnvKeys` 测试覆盖。

@@ -59,6 +59,7 @@ vfox current cmake
 
 # Run a command with an installed CMake without changing the shell.
 vfox exec cmake@3.31.6 -- cmake --version
+# On Windows, vfox 1.1.0 needs the extension: -- cmake.exe --version
 ```
 
 This plugin needs vfox **1.1.0** or later. That is the first release with the

@@ -31,11 +31,11 @@ Both suites run the same flow against the container:
 2. **Plugin** — `vfox --version` is the pinned 1.1.0 and `vfox search cmake`
    lists the pinned release (3.31.6).
 3. **Install** — `vfox install cmake@3.31.6` succeeds. The download comes from
-   cmake.org, so the test retries three times to absorb a transient network
+   cmake.org, so the test retries five times to absorb a transient network
    failure.
 4. **Exec** — `vfox exec cmake@3.31.6 -- cmake --version` prints
-   `cmake version 3.31.6`. This proves the EnvKeys hook put the right `bin`
-   directory on `PATH`.
+   `cmake version 3.31.6` (on Windows, `-- cmake.exe --version`). This proves
+   the EnvKeys hook put the right `bin` directory on `PATH`.
 5. **Detect** — a CMake-shaped stub reporting 3.20.0 is placed on `PATH`.
    `vfox link --detect cmake --yes` must find it, link it, and the linked
    version must run with `vfox exec`.
@@ -59,8 +59,10 @@ run is the slowest; later runs reuse the downloaded layers.
 
 `.github/workflows/e2e.yml` runs `e2e-linux` on `ubuntu-latest` and
 `e2e-windows` on `windows-latest`. Both set up Go and then run the matching
-`go test -v -run TestE2E ./...`. A concurrency group cancels superseded pull
-request runs while letting every commit on the default branch finish.
+`go test -v -timeout 40m -run TestE2E ./linux` (or `./windows`). Each runner
+only its own suite. A concurrency group cancels superseded pull request runs
+while letting every commit on the default branch finish.
 
-The hook tests (no containers) run in `.github/workflows/test.yml`, which also
-runs the macOS-filesystem layout checks with vfox's Lua interpreter.
+The offline hook tests (no containers) run in `.github/workflows/test.yml` with
+`vfox plugin test .` on `ubuntu-latest`. There is no macOS CI runner; the
+macOS app-bundle layout is covered by the offline `EnvKeys` test instead.

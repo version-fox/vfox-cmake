@@ -57,6 +57,7 @@ vfox current cmake
 
 # 不改 shell 就用某个版本跑命令。
 vfox exec cmake@3.31.6 -- cmake --version
+# Windows 上 vfox 1.1.0 需要带扩展名：-- cmake.exe --version
 ```
 
 本插件需要 vfox **1.1.0** 或更高版本。这是第一个带 Detect hook 的发行版，

@@ -7,7 +7,7 @@
 | 系统 | 插件识别的架构 | 压缩包 |
 | --- | --- | --- |
 | Linux | `amd64`、`386`、`arm64` | `.tar.gz` |
-| macOS | `amd64` 和 universal（Intel 与 Apple Silicon 上都会列出） | `.tar.gz` |
+| macOS | `amd64`（Intel）和 universal（`""`；Intel 与 Apple Silicon 都可用） | `.tar.gz` |
 | Windows | `amd64`、`386`、`arm64` | `.zip` |
 
 插件把 `RUNTIME.osType`、`RUNTIME.archType` 与 `assets/version.json` 匹配；该文件

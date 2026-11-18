@@ -9,6 +9,21 @@ this repository. Check network access to `fastly.jsdelivr.net`, and make sure
 your architecture is one of the [supported ones](platforms.md). A stale local
 plugin can be refreshed with `vfox update cmake`.
 
+## `plugin [PreInstall] method error: no version number provided`
+
+This means `PreInstall` could not find a release for the requested version and
+your platform. Two known causes, both fixed in the current plugin:
+
+- On ARM Linux (including WSL on ARM), older version data mislabelled `aarch64`
+  archives as `386`, so no `arm64` release was ever offered. Run
+  `vfox update cmake` to pick up corrected version data.
+- vfox 0.6.0 passed the `latest` marker through to `PreInstall` unchanged. The
+  plugin now resolves it itself. Upgrading vfox to 1.1.0 or later is also
+  recommended.
+
+If it still happens, run `vfox search cmake` and install one of the listed
+versions explicitly, for example `vfox install cmake@3.31.6`.
+
 ## `vfox link --detect cmake` finds nothing
 
 The Detect hook looks on `PATH` and in the system locations listed in

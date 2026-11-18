@@ -7,7 +7,7 @@
 | OS | Architectures reported by the plugin | Archive |
 | --- | --- | --- |
 | Linux | `amd64`, `386`, `arm64` | `.tar.gz` |
-| macOS | `amd64` and universal (both are offered on Intel and Apple Silicon) | `.tar.gz` |
+| macOS | `amd64` (Intel) and universal (`""`; both Intel and Apple Silicon) | `.tar.gz` |
 | Windows | `amd64`, `386`, `arm64` | `.zip` |
 
 The plugin matches `RUNTIME.osType` and `RUNTIME.archType` against

@@ -50,4 +50,10 @@ cases = cases + 1
 assert(keys("/unknown")[1].value == "/unknown/bin", "fallback when nothing exists")
 cases = cases + 1
 
+-- A binary detected directly in a PATH directory has that directory as its
+-- root; EnvKeys must accept the root itself (version-fox/vfox-cmake#1 review).
+files["/usr/local/bin/cmake"] = true
+assert(keys("/usr/local/bin")[1].value == "/usr/local/bin", "binary at SDK root")
+cases = cases + 1
+
 print(("PASS %d env_keys checks"):format(cases))

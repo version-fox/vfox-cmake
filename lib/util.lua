@@ -62,19 +62,21 @@ function util:getInfo()
         error("Failed to get information: status_code =>" .. resp.status_code)
     end
 
-    local respInfo = json.decode(resp.body)[RUNTIME.osType]
+    local respInfo = json.decode(resp.body)[RUNTIME.osType] or {}
+    local releases = {}
     for _, obj in ipairs(respInfo) do
-        if obj.arch == "" then
+        if obj.arch == "" or obj.arch == RUNTIME.archType then
             table.insert(result, { version = obj.version, note = "" })
-            table.insert(utilSingleton.RELEASES, { version = obj.version, url = obj.download_url, sha256 = obj.sha256 })
-        elseif obj.arch == RUNTIME.archType then
-            table.insert(result, { version = obj.version, note = "" })
-            table.insert(utilSingleton.RELEASES, { version = obj.version, url = obj.download_url, sha256 = obj.sha256 })
+            table.insert(releases, { version = obj.version, url = obj.download_url, sha256 = obj.sha256 })
         end
     end
     table.sort(result, function(a, b)
         return util:compare_versions(a, b)
     end)
+    -- Replace rather than append: Available can be called more than once in a
+    -- single install (for example to resolve "latest"), and stale releases
+    -- must not accumulate across calls.
+    utilSingleton.RELEASES = releases
     return result
 end
 
