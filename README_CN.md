@@ -13,7 +13,7 @@ CMake。
 
 ## 功能
 
-- 安装 3.0 以来的所有官方 CMake 版本，下载后按 SHA-256 校验。
+- 安装 2.8.8 以来的所有官方 CMake 版本，下载后按 SHA-256 校验。
 - 自动识别当前平台：Linux（amd64、386、arm64）、macOS（universal / amd64）、
   Windows（amd64、386、arm64）。
 - `vfox link --detect cmake` 会找到系统 CMake、Homebrew 或 Scoop 装的版本，
@@ -84,7 +84,7 @@ vfox exec cmake@3.31.6 -- cmake --version
 维护者可以在默认分支上从 **Actions → Plugin → Run workflow** 发布，填入不带
 `v` 前缀的插件版本即可。共享 workflow 会更新 `metadata.lua`、创建版本提交和
 tag，并在本仓库发布 ZIP 与 manifest。不需要本地打 tag，也不需要额外的 release
-token。PR 只跑检查；PR 标题不再触发发布。
+token。PR 只跑检查。
 
 已有版本 tag 的推送，只要 `PLUGIN.version` 与 tag 一致也支持。发布失败时重新
 运行原来失败的 job 即可续跑。

@@ -49,6 +49,6 @@ NOTE:
 PLUGIN.manifestUrl = "https://github.com/version-fox/vfox-cmake/releases/download/manifest/manifest.json"
 -- Some things that need user to be attention!
 PLUGIN.notes = {
-    "Supports version 3.0 and above.",
+    "Supports version 2.8.8 and above.",
     "Usage and system SDK detection: https://github.com/version-fox/vfox-cmake/blob/main/README.md",
 }

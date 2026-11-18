@@ -11,15 +11,20 @@ plugin can be refreshed with `vfox update cmake`.
 
 ## `plugin [PreInstall] method error: no version number provided`
 
-This means `PreInstall` could not find a release for the requested version and
-your platform. Two known causes, both fixed in the current plugin:
+Older releases of this plugin reported this error when they could not find a
+release for the requested version and your platform. From 0.1.8 the error names
+the missing version and platform instead, for example
+`CMake version 3.31.6 is not available for linux/arm64`.
 
-- On ARM Linux (including WSL on ARM), older version data mislabelled `aarch64`
-  archives as `386`, so no `arm64` release was ever offered. Run
-  `vfox update cmake` to pick up corrected version data.
-- vfox 0.6.0 passed the `latest` marker through to `PreInstall` unchanged. The
-  plugin now resolves it itself. Upgrading vfox to 1.1.0 or later is also
-  recommended.
+One known cause is fixed in 0.1.8. On ARM Linux (including WSL on ARM), older
+version data mislabelled `aarch64` archives as `386`, so no `arm64` release was
+ever offered. The corrected version data is read from the jsDelivr mirror at run
+time, so you do not need a plugin update for it. If `vfox search cmake` still
+lists no `arm64` versions, the mirror may still serve an old copy; try again
+later.
+
+This plugin needs vfox 1.1.0 or later (its `minRuntimeVersion`). If you are on an
+older vfox, upgrade it first.
 
 If it still happens, run `vfox search cmake` and install one of the listed
 versions explicitly, for example `vfox install cmake@3.31.6`.
@@ -43,10 +48,11 @@ skipped. Verify the binary directly:
 /path/to/cmake/bin/cmake --version
 ```
 
-The EnvKeys hook picks the first layout under the given SDK root that contains
-a `cmake` executable: `CMake.app/Contents/bin` first, then `bin`. If a link
-points at a directory with neither, vfox still adds `bin` to `PATH`, and the
-command will not be found. Re-link with the correct root:
+The EnvKeys hook picks the first location under the given SDK root that
+contains a `cmake` executable: `CMake.app/Contents/bin`, then `bin`, then the
+root directory itself. If a link points at a directory with none of them, vfox
+still adds a `bin` directory to `PATH` (`CMake.app/Contents/bin` on macOS), and
+the command will not be found. Re-link with the correct root:
 
 ```bash
 vfox link --force cmake@3.31.6 /path/to/sdk/root

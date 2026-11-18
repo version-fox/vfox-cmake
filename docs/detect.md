@@ -33,13 +33,14 @@ at a different directory. `vfox unlink cmake@3.31.6` removes a link.
 The Detect hook looks in these places, in order:
 
 - every directory on `PATH`;
-- **Linux:** `/usr/bin`, `/usr/local/bin`, `/opt/cmake/bin`, `/opt/bin`,
+- **Linux:** `/usr/local/bin`, `/usr/bin`, `/opt/cmake/bin`, `/opt/bin`,
   `/snap/cmake/current/bin`, `~/.local/bin`;
 - **macOS:** `/opt/homebrew/bin`, `/usr/local/bin`, `/usr/bin`,
   `/opt/cmake/bin`, `/Applications/CMake.app/Contents/bin`;
-- **Windows:** `Program Files\CMake`, `Program Files (x86)\CMake`,
-  `%LOCALAPPDATA%\Programs\CMake`, `%USERPROFILE%\scoop\apps\cmake\current`,
-  `C:\ProgramData\chocolatey\bin`, `C:\Tools\cmake\bin`;
+- **Windows:** `Program Files\CMake\bin`, `Program Files (x86)\CMake\bin`,
+  `%LOCALAPPDATA%\Programs\CMake\bin`,
+  `%USERPROFILE%\scoop\apps\cmake\current\bin`, `C:\ProgramData\chocolatey\bin`,
+  `C:\Tools\cmake\bin`;
 - `CMAKE_HOME/bin` (and the macOS app-bundle layout under `CMAKE_HOME`) when
   the environment variable is set.
 
@@ -52,7 +53,8 @@ directories are never offered back to you.
 
 A vfox-installed CMake has a `bin/cmake` (or `CMake.app/Contents/bin/cmake`)
 under its SDK root. A system CMake keeps the layout it was installed with, for
-example `/usr/bin/cmake`. The EnvKeys hook probes both layouts and returns the
+example `/usr/bin/cmake`. A `cmake` found directly in a directory on `PATH` has
+no `bin` level at all. The EnvKeys hook probes all three places and returns the
 directory that actually contains the executable, so a linked CMake works the
 same as an installed one. See [troubleshooting.md](troubleshooting.md) if a
 binary is found but does not run.

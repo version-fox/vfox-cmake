@@ -6,6 +6,8 @@ What changed in each release, as a user notices it. GitHub's release pages list 
 
 ## Unreleased
 
+## 0.1.8 (2026-11-18)
+
 - Fixed `plugin [PreInstall] method error: no version number provided` on ARM
   Linux, including WSL. The release scraper stored `aarch64` archives under
   the `386` architecture, so no release matched `arm64` and the hook returned
@@ -32,10 +34,6 @@ What changed in each release, as a user notices it. GitHub's release pages list 
 - Added complete English and Chinese documentation, Lua formatting and static
   analysis, license-header checks, GitHub Actions lint/license/test/E2E
   workflows, and Linux and Windows container E2E suites.
-- Corrected documentation that described a released `0.2.0`; the plugin is
-  still at `0.1.7` and these changes are unreleased. Fixed inaccurate E2E
-  retry count, CI commands and macOS/Windows examples, and removed a stale
-  actionlint configuration for runner labels that are not used.
 
 ## 0.1.7 (2025-09-29)
 

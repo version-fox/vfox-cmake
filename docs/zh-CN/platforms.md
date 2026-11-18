@@ -16,9 +16,12 @@
 
 ## 版本
 
-包含 3.0 以来的官方发布版，以及 CMake 发布的候选版本。列表由
+包含 2.8.8 以来的官方发布版，以及 CMake 发布的候选版本。列表由
 `update_versions` workflow 每周刷新，也可以从 **Actions → update_versions →
 Run workflow** 手动重新生成。
+
+2.8.8 之前的版本不列出：cmake.org 没有为它们提供 SHA-256 校验文件，而插件只提供
+能用 SHA-256 校验的压缩包。
 
 版本名就是 CMake 自己打印的那个：
 

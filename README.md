@@ -13,7 +13,7 @@ is already on your machine.
 
 ## Features
 
-- Installs every official CMake release from 3.0 onwards, with SHA-256
+- Installs every official CMake release from 2.8.8 onwards, with SHA-256
   verification of the downloaded archive.
 - Linux (amd64, 386 and arm64), macOS (universal / amd64) and Windows (amd64,
   386 and arm64) builds, selected automatically for the running platform.
@@ -87,8 +87,7 @@ Maintainers can publish from **Actions → Plugin → Run workflow** on the defa
 branch by entering a stable plugin version without the `v` prefix. The shared
 workflow updates `metadata.lua`, creates the version commit and tag, and
 publishes the ZIP and manifest in this repository. No local tag or extra
-release token is needed. Pull requests run checks only; PR titles no longer
-trigger publication.
+release token is needed. Pull requests only run checks.
 
 Existing version-tag pushes are supported when `PLUGIN.version` already matches
 the tag. If publication fails, re-run the original failed job to resume it.
