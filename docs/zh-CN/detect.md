@@ -33,13 +33,14 @@ Windows 上 vfox 1.1.0 的 `exec` 需要带扩展名：用
 Detect hook 按以下顺序查找：
 
 - `PATH` 上的所有目录；
-- **Linux：** `/usr/bin`、`/usr/local/bin`、`/opt/cmake/bin`、`/opt/bin`、
+- **Linux：** `/usr/local/bin`、`/usr/bin`、`/opt/cmake/bin`、`/opt/bin`、
   `/snap/cmake/current/bin`、`~/.local/bin`；
 - **macOS：** `/opt/homebrew/bin`、`/usr/local/bin`、`/usr/bin`、
   `/opt/cmake/bin`、`/Applications/CMake.app/Contents/bin`；
-- **Windows：** `Program Files\CMake`、`Program Files (x86)\CMake`、
-  `%LOCALAPPDATA%\Programs\CMake`、`%USERPROFILE%\scoop\apps\cmake\current`、
-  `C:\ProgramData\chocolatey\bin`、`C:\Tools\cmake\bin`；
+- **Windows：** `Program Files\CMake\bin`、`Program Files (x86)\CMake\bin`、
+  `%LOCALAPPDATA%\Programs\CMake\bin`、
+  `%USERPROFILE%\scoop\apps\cmake\current\bin`、`C:\ProgramData\chocolatey\bin`、
+  `C:\Tools\cmake\bin`；
 - 设置了 `CMAKE_HOME` 时，扫描 `CMAKE_HOME/bin`（以及 macOS app bundle 的目录
   结构）。
 
@@ -51,6 +52,7 @@ vfox 自己目录里的安装不会被提供给你。
 
 vfox 安装的 CMake，SDK 根目录下面是 `bin/cmake`（macOS 上是
 `CMake.app/Contents/bin/cmake`）；系统 CMake 则保持它原来的布局，比如
-`/usr/bin/cmake`。EnvKeys hook 会探测这两种布局，返回真正包含可执行文件的
-目录，因此链接的 CMake 和安装的用起来一样。如果找到了二进制却跑不起来，见
+`/usr/bin/cmake`；直接放在 `PATH` 某目录里的 `cmake` 则没有 `bin` 这一层。
+EnvKeys hook 会依次探测这三个位置，返回真正包含可执行文件的目录，因此链接的
+CMake 和安装的用起来一样。如果找到了二进制却跑不起来，见
 [故障排查](troubleshooting.md)。

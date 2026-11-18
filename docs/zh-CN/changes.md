@@ -6,6 +6,8 @@
 
 ## 未发布
 
+## 0.1.8（2026-11-18）
+
 - 修复 ARM Linux（含 WSL）上的 `plugin [PreInstall] method error: no version
   number provided`。版本抓取脚本把 `aarch64` 压缩包归到 `386` 架构下，导致
   `arm64` 匹配不到任何版本、hook 返回空版本号。`assets/version.json` 现在
@@ -27,9 +29,6 @@
   `vfox plugin test .` 运行。
 - 新增完整的中英文文档、Lua 格式化与静态分析、license 头检查、GitHub Actions
   的 lint/license/test/E2E workflow，以及 Linux 和 Windows 容器端到端测试。
-- 修正了把未发布内容写成已发布 `0.2.0` 的文档；插件仍是 `0.1.7`，这些变更
-  尚未发布。修正了 E2E 重试次数、CI 命令以及 macOS/Windows 示例等不准确的
-  描述，并删除了为未使用的 runner 标签准备的失效 actionlint 配置。
 
 ## 0.1.7（2025-09-29）
 

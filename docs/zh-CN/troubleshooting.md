@@ -10,13 +10,17 @@ Available hook 通过本仓库的 jsDelivr 镜像读取 `assets/version.json`。
 
 ## `plugin [PreInstall] method error: no version number provided`
 
-这表示 `PreInstall` 找不到与所请求版本及当前平台匹配的发布包。当前插件已修复
-两个已知原因：
+旧版本的插件在找不到与所请求版本及当前平台匹配的发布包时会报这个错误。
+0.1.8 起，错误会直接写明缺失的版本和平台，例如
+`CMake version 3.31.6 is not available for linux/arm64`。
 
-- 在 ARM Linux（含 ARM 架构的 WSL）上，旧版本数据把 `aarch64` 压缩包误标成
-  `386`，因此永远匹配不到 `arm64` 版本。执行 `vfox update cmake` 刷新版本数据。
-- vfox 0.6.0 会把 `latest` 标记原样传给 `PreInstall`；插件现在会自行解析。
-  同时也建议升级到 vfox 1.1.0 或更高版本。
+0.1.8 修复了一个已知原因：在 ARM Linux（含 ARM 架构的 WSL）上，旧版本数据把
+`aarch64` 压缩包误标成 `386`，因此永远匹配不到 `arm64` 版本。修正后的版本数据在
+运行时从 jsDelivr 镜像读取，所以不需要为此更新插件。如果 `vfox search cmake`
+仍然列不出 `arm64` 版本，说明镜像可能还在提供旧文件，稍后再试。
+
+本插件需要 vfox 1.1.0 或更高版本（即 `minRuntimeVersion`）。如果你用的是更旧的
+vfox，请先升级。
 
 如果仍然出现，请先执行 `vfox search cmake`，然后显式安装列出的版本，例如
 `vfox install cmake@3.31.6`。
@@ -37,9 +41,10 @@ Detect hook 会查 `PATH` 和 [detect.md](detect.md) 里列的系统目录。它
 /path/to/cmake/bin/cmake --version
 ```
 
-EnvKeys hook 会在给定的 SDK 根目录里按顺序找第一个含 `cmake` 可执行文件的布局：
-先 `CMake.app/Contents/bin`，再 `bin`。如果链接指向的目录两者都没有，vfox 仍会
-把 `bin` 加进 `PATH`，于是命令找不到。用正确的根目录重新链接：
+EnvKeys hook 会在给定的 SDK 根目录里按顺序找第一个含 `cmake` 可执行文件的位置：
+先 `CMake.app/Contents/bin`，再 `bin`，最后是根目录本身。如果链接指向的目录里
+这些位置都没有，vfox 仍会把一个 `bin` 目录加进 `PATH`（macOS 上是
+`CMake.app/Contents/bin`），于是命令找不到。用正确的根目录重新链接：
 
 ```bash
 vfox link --force cmake@3.31.6 /path/to/sdk/root

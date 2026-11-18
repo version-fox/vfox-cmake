@@ -84,7 +84,7 @@ vfox exec cmake@3.31.6 -- cmake --version
 维护者可以在默认分支上从 **Actions → Plugin → Run workflow** 发布，填入不带
 `v` 前缀的插件版本即可。共享 workflow 会更新 `metadata.lua`、创建版本提交和
 tag，并在本仓库发布 ZIP 与 manifest。不需要本地打 tag，也不需要额外的 release
-token。PR 只跑检查；PR 标题不再触发发布。
+token。PR 只跑检查。
 
 已有版本 tag 的推送，只要 `PLUGIN.version` 与 tag 一致也支持。发布失败时重新
 运行原来失败的 job 即可续跑。
