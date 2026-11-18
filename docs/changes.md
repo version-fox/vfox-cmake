@@ -6,6 +6,10 @@ What changed in each release, as a user notices it. GitHub's release pages list 
 
 ## Unreleased
 
+- `vfox search cmake` and `vfox install` now cover only CMake 3.0 and later, as
+  the plugin documents. The version data had listed 2.x releases by mistake, and
+  `assets/get_versions.py` no longer collects the 2.x release directories.
+
 ## 0.1.8 (2026-11-18)
 
 - Fixed `plugin [PreInstall] method error: no version number provided` on ARM

@@ -6,6 +6,10 @@
 
 ## 未发布
 
+- `vfox search cmake` 和 `vfox install` 现在只覆盖 CMake 3.0 及以上版本，与插件
+  文档一致。版本数据此前误列了 2.x 版本，`assets/get_versions.py` 也不再抓取
+  2.x 的发布目录。
+
 ## 0.1.8（2026-11-18）
 
 - 修复 ARM Linux（含 WSL）上的 `plugin [PreInstall] method error: no version
