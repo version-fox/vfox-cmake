@@ -15,7 +15,7 @@
 # License header check (Apache SkyWalking Eyes). Lua, Python, YAML, TOML,
 # Dockerfiles and ignore files are covered. Markdown, JSON fixtures and the
 # license text itself are exempt; see paths-ignore below. CI runs the check
-# via .github/workflows/license.yml; the same container is used locally (see
+# via .github/workflows/license.yml; the same release is run locally (see
 # docs/development.md).
 header:
   license:

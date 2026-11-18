@@ -13,8 +13,8 @@ E2E suites in `tests/e2e/`.
 - Go 1.24 or later, for the E2E suites and the license tools;
 - Docker, for the E2E suites and for running the linters in temporary
   containers;
-- StyLua 2.5.2 and lua-language-server 3.19.1 (or use the Docker commands
-  below, which fetch pinned versions).
+- StyLua 2.5.2 and lua-language-server 3.19.1. The Docker command under
+  "Lua formatting" fetches the pinned StyLua for you.
 
 ## Offline hook tests
 
@@ -22,9 +22,14 @@ E2E suites in `tests/e2e/`.
 vfox plugin test .
 ```
 
-This finds every `tests/**/*_test.lua`, runs it in its own VM with mocked
-`io.open`, `io.popen` and HTTP, and fails if the plugin raises an error. No
-network access is needed.
+This finds every `tests/**/*_test.lua` and runs each file in a VM of its own.
+Each file loads the plugin with `test.load()` from `vfox.test`. That call takes
+options such as `os`, `arch`, `env` and `http`, which a test uses to fake the
+platform, environment variables and HTTP responses. A file that does not call
+`test.load()`, a file that raises an error, and a run that finds no test file
+all fail. `io.popen` is disabled in these VMs, so a test that runs a command
+replaces it with a Lua stub, as `detect_cmake_test.lua` does. Tests that need
+fake files replace `io.open` the same way. No network access is needed.
 
 ## Lua formatting
 
