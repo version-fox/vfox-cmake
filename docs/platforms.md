@@ -17,10 +17,13 @@ only when the archive for the current platform exists in that file.
 
 ## Versions
 
-Official releases from 3.0 onwards are included, plus release candidates when
+Official releases from 2.8.8 onwards are included, plus release candidates when
 CMake publishes them. The list is refreshed weekly by the `update_versions`
 workflow and can be regenerated on demand from **Actions → update_versions →
 Run workflow**.
+
+Releases before 2.8.8 are not listed. cmake.org publishes no SHA-256 checksum
+file for them, and the plugin only offers archives it can verify with SHA-256.
 
 Version names are the ones CMake itself prints:
 

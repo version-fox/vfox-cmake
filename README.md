@@ -13,7 +13,7 @@ is already on your machine.
 
 ## Features
 
-- Installs every official CMake release from 3.0 onwards, with SHA-256
+- Installs every official CMake release from 2.8.8 onwards, with SHA-256
   verification of the downloaded archive.
 - Linux (amd64, 386 and arm64), macOS (universal / amd64) and Windows (amd64,
   386 and arm64) builds, selected automatically for the running platform.

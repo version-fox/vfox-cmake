@@ -13,7 +13,7 @@ CMake。
 
 ## 功能
 
-- 安装 3.0 以来的所有官方 CMake 版本，下载后按 SHA-256 校验。
+- 安装 2.8.8 以来的所有官方 CMake 版本，下载后按 SHA-256 校验。
 - 自动识别当前平台：Linux（amd64、386、arm64）、macOS（universal / amd64）、
   Windows（amd64、386、arm64）。
 - `vfox link --detect cmake` 会找到系统 CMake、Homebrew 或 Scoop 装的版本，
