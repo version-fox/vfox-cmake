@@ -12,6 +12,8 @@
 -- See the License for the specific language governing permissions and
 -- limitations under the License.
 
+local version_order = require("version_order")
+
 --- Finds CMake installations that are already on the machine, for
 --- `vfox link --detect cmake`. Each result names the version the same way
 --- `cmake --version` prints it (for example `3.31.6`) and points at the SDK
@@ -179,25 +181,6 @@ function detect.candidate_bin_dirs()
     return out
 end
 
---- True when value sorts after other in version order.
-function detect.compare_versions(value, other)
-    local function parts(version)
-        local result = {}
-        for part in tostring(version):gmatch("%d+") do
-            table.insert(result, tonumber(part))
-        end
-        return result
-    end
-    local a, b = parts(value), parts(other)
-    for i = 1, math.max(#a, #b) do
-        local left, right = a[i] or 0, b[i] or 0
-        if left ~= right then
-            return left > right
-        end
-    end
-    return false
-end
-
 --- Returns true when path names a readable file.
 local function is_file(path)
     local file = io.open(path, "r")
@@ -226,8 +209,9 @@ local function binary_name(dir)
     return detect.join(dir, "cmake")
 end
 
---- Finds every CMake on the machine. Results are sorted newest first and
---- deduplicated by version: vfox links the first match it is offered.
+--- Finds every CMake on the machine. Results are deduplicated by version and
+--- sorted with the newest release first (see version_order), because vfox
+--- links the first match it is offered.
 function detect.find_all()
     local out, seen_paths, seen_versions = {}, {}, {}
     for _, dir in ipairs(detect.candidate_bin_dirs()) do
@@ -246,9 +230,7 @@ function detect.find_all()
             end
         end
     end
-    table.sort(out, function(a, b)
-        return detect.compare_versions(a.version, b.version)
-    end)
+    version_order.sort_newest_first(out)
     return out
 end
 

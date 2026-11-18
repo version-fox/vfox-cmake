@@ -6,6 +6,14 @@ What changed in each release, as a user notices it. GitHub's release pages list 
 
 ## Unreleased
 
+- `vfox install cmake@latest` installs the newest release, such as `4.5.0`,
+  instead of a release candidate such as `4.5.0-rc3`. A candidate and its
+  release used to compare as equal, so the list could start with a candidate.
+  A candidate is now listed below its release, and a candidate whose release
+  is not out yet is listed last. `latest` is therefore a release whenever the
+  platform has one. `vfox link --detect cmake` orders the CMake installations
+  it finds in the same way.
+
 ## 0.1.8 (2026-11-18)
 
 - Fixed `plugin [PreInstall] method error: no version number provided` on ARM

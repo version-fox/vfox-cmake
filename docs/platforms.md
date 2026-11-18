@@ -33,7 +33,12 @@ vfox install cmake@4.5.0
 vfox install cmake@3.31.6
 ```
 
-Pre-release versions keep their suffix, for example `4.5.0-rc1`.
+Pre-release versions keep their suffix, for example `4.5.0-rc1`. Each one is
+listed below its release, and a pre-release whose release is not out yet is
+listed last.
+
+`latest` is the newest release for your platform. It is a pre-release only when
+the list has no release for your platform at all.
 
 ## Requirements
 

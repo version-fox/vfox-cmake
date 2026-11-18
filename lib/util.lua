@@ -14,6 +14,7 @@
 
 local http = require("http")
 local json = require("json")
+local version_order = require("version_order")
 
 local util = {}
 
@@ -22,32 +23,6 @@ local utilSingleton = setmetatable({}, util)
 
 utilSingleton.BASE_URL = "https://cmake.org/files/"
 utilSingleton.RELEASES = {}
-
-function util:compare_versions(v1o, v2o)
-    local v1 = v1o.version
-    local v2 = v2o.version
-    local v1_parts = {}
-    for part in string.gmatch(v1, "[^.]+") do
-        table.insert(v1_parts, tonumber(part))
-    end
-
-    local v2_parts = {}
-    for part in string.gmatch(v2, "[^.]+") do
-        table.insert(v2_parts, tonumber(part))
-    end
-
-    for i = 1, math.max(#v1_parts, #v2_parts) do
-        local v1_part = v1_parts[i] or 0
-        local v2_part = v2_parts[i] or 0
-        if v1_part > v2_part then
-            return true
-        elseif v1_part < v2_part then
-            return false
-        end
-    end
-
-    return false
-end
 
 function util:getInfo()
     local result = {}
@@ -70,9 +45,8 @@ function util:getInfo()
             table.insert(releases, { version = obj.version, url = obj.download_url, sha256 = obj.sha256 })
         end
     end
-    table.sort(result, function(a, b)
-        return util:compare_versions(a, b)
-    end)
+    -- vfox installs the first entry for "latest", so sorting keeps a release first.
+    version_order.sort_newest_first(result)
     -- Replace rather than append: Available can be called more than once in a
     -- single install (for example to resolve "latest"), and stale releases
     -- must not accumulate across calls.
