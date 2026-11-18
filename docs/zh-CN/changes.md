@@ -6,6 +6,12 @@
 
 ## 未发布
 
+- `vfox install cmake@latest` 现在安装最新的正式版（如 `4.5.0`），而不是候选版本
+  （如 `4.5.0-rc3`）。候选版本与正式版过去被当作相等，列表可能以候选版本开头。
+  现在候选版本排在对应正式版之下；尚未发布正式版的候选版本排在最后，因此只要平台
+  上有正式版，`latest` 就是正式版。`vfox link --detect cmake` 对找到的 CMake
+  安装也按同样的顺序排列。
+
 ## 0.1.8（2026-11-18）
 
 - 修复 ARM Linux（含 WSL）上的 `plugin [PreInstall] method error: no version

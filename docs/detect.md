@@ -46,8 +46,9 @@ The Detect hook looks in these places, in order:
 
 For each candidate the plugin checks for a `cmake` executable (or `cmake.exe`
 on Windows), runs `cmake --version`, and uses the version it reports. Results
-are deduplicated by version (newest first) and installations under vfox's own
-directories are never offered back to you.
+are deduplicated by version and listed newest first: a release comes before its
+release candidates, and a candidate whose release is not installed comes last.
+Installations under vfox's own directories are never offered back to you.
 
 ## Why linking needs layout detection
 

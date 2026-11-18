@@ -87,10 +87,6 @@ check(detect.root_from_bin("/opt/cmake/bin/cmake") == "/opt/cmake", "prefix root
 check(detect.root_from_bin("/Applications/CMake.app/Contents/bin/cmake") == "/Applications", "macOS bundle")
 check(detect.root_from_bin("C:\\Program Files\\CMake\\bin\\cmake.exe") == "C:/Program Files/CMake", "Windows root")
 
-check(detect.compare_versions("3.31.6", "3.28.1"), "newer version sorts first")
-check(not detect.compare_versions("3.28.1", "3.31.6"), "older version does not sort first")
-check(not detect.compare_versions("3.31.6", "3.31.6"), "equal versions")
-
 local dirs = detect.path_dirs("/usr/bin::/opt/cmake/bin:")
 check(#dirs == 2 and dirs[1] == "/usr/bin" and dirs[2] == "/opt/cmake/bin", "PATH splitting")
 
@@ -108,5 +104,15 @@ check(#found == 2, "two distinct versions (got " .. #found .. ")")
 check(found[1].version == "3.31.6" and found[2].version == "3.28.1", "newest first")
 check(found[1].path == "/opt/cmake", "root of the first match")
 check(found[1].note ~= "" and found[2].note ~= "", "entries carry a note")
+
+-- A release is listed before its release candidate, and a candidate whose
+-- release is not installed goes last, so the first match is a release.
+banners["/usr/bin/cmake"] = "cmake version 4.5.0-rc3\n"
+banners["/opt/cmake/bin/cmake"] = "cmake version 4.5.0\n"
+banners["/usr/local/bin/cmake"] = "cmake version 4.6.0-rc1\n"
+found = detect.find_all()
+check(#found == 3, "three distinct versions (got " .. #found .. ")")
+local order = found[1].version .. " " .. found[2].version .. " " .. found[3].version
+check(order == "4.5.0 4.5.0-rc3 4.6.0-rc1", "release first, unreleased candidate last (got " .. order .. ")")
 
 print(("PASS %d detect_cmake checks"):format(cases))
